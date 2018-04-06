@@ -1,0 +1,44 @@
+<div>
+    <mat-toolbar color="primary">
+      <div class="example-fill-remaining-space">
+         <i class="logo-icon icon ion-fork-repo"></i> <span>Analitics layout builder</span>
+      </div>
+      <div class="button-row">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button routerLink="/widgets" mat-menu-item>
+          <mat-icon>widgets</mat-icon>Компоненты</button>
+        <button routerLink="/settings" mat-menu-item><mat-icon>settings</mat-icon>Настройки</button>
+        <button mat-menu-item><mat-icon>turned_in_not</mat-icon>Справка</button>
+      </mat-menu>
+      </div>
+    </mat-toolbar>
+<!-- <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active">
+      <button mat-icon-button>
+        <mat-icon routerLink="/" aria-label="home">home</mat-icon>
+      </button>
+    </li>
+  </ol>
+</nav> -->
+<div class="basic-container">
+  <router-outlet class="basic-container"></router-outlet>
+</div>
+<!--
+<div class="basic-container">
+      <app-start-page></app-start-page>
+
+      <mat-card class="basic-container">
+        <h5>Layouts Component - сохраненные лэйауты</h5>
+        <app-layouts-view-list></app-layouts-view-list>
+      </mat-card>
+
+      <mat-card class="basic-container">
+      <h5>BS STEPPER Component</h5>
+        <app-bs-stepper></app-bs-stepper>
+      </mat-card>
+    </div>-->
+</div>

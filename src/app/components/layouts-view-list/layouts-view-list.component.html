@@ -1,0 +1,31 @@
+<button routerLink="/create-layout" mat-raised-button color="primary" class="text-center">Создать новое представление
+  <i class="icon ion-ios-arrow-thin-right"></i>
+</button>
+<mat-list>
+
+  <h3 mat-subheader>Сохраненные представления:</h3>
+
+  <mat-divider></mat-divider>
+
+  <mat-list-item *ngFor="let layout of layouts">
+    <i matListAvatar class="icon ion-ios-analytics-outline"></i>
+    <h4 mat-line>{{layout.name}}</h4>
+    <p mat-line><b>Описание:</b> {{layout.description}}</p>
+    <p mat-line><b>Дата:</b> {{layout.updated | date}} </p>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+</mat-list>
+
+<mat-selection-list #shoes>
+  <mat-list-option *ngFor="let layout of layouts">
+    <h4 mat-line>{{layout.name}}</h4>
+    <p mat-line>
+      <b>Описание:</b> {{layout.description}}</p>
+    <p mat-line>
+      <b>Дата:</b> {{layout.updated | date}} </p>
+  </mat-list-option>
+</mat-selection-list>
+
+<p>
+  Выбранных элементов: {{shoes.selectedOptions.selected.length}}
+</p>

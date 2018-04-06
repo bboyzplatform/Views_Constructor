@@ -1,0 +1,65 @@
+
+    <mat-card-title>
+        Мастер создания представления
+    </mat-card-title>
+
+    <mat-horizontal-stepper [linear]="isLinear">
+        <mat-step label="Шаг1">
+            <div>
+                <h4>Выберите название нового представления и объекты-источники</h4>
+                <form [formGroup]="firstFormGroup">
+                    <mat-form-field>
+                        <input matInput placeholder="Название представления" formControlName="firstCtrl" required>
+                    </mat-form-field>
+                    <mat-form-field>
+                      <mat-select placeholder="Источник данных">
+                        <mat-option
+                        *ngFor="let source of sources"
+                        [value]="source.value">
+                          {{ source.value }}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                </form>
+                <button mat-raised-button color="secondary" matStepperNext>
+                  Далее <i class="icon ion-ios-arrow-thin-right"></i>
+                </button>
+            </div>
+        </mat-step>
+
+        <mat-step label="Шаг 2">
+            Выберите операции с данными.<div class="basic-container">
+              <mat-card >
+                <ul>
+                  <li>Источник: {{ itemsArr.Name }}</li>
+                </ul>
+                <br />
+                Получены данные:
+                <br />
+                <ul>
+                  <li>UniqueIdentifier: {{ itemsArr.UniqueIdentifier }}</li>
+                  <li>Name: {{ itemsArr.Name }}</li>
+                </ul>
+
+                <mat-card class="example-card">
+                  <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Demo Treeview</mat-card-title>
+                    <mat-card-subtitle>Из json файла</mat-card-subtitle>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <p-tree [value]="files">
+                    </p-tree>
+                  </mat-card-content>
+                </mat-card>
+
+              </mat-card>
+            </div>
+
+            <div>
+                <button mat-button color="secondary" matStepperPrevious><i class="icon ion-ios-arrow-thin-left"></i> Назад</button>
+            </div>
+
+        </mat-step>
+    </mat-horizontal-stepper>
+

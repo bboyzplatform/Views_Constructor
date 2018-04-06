@@ -1,0 +1,40 @@
+  <div class="basic-container">
+    <div class="basic-container">
+      <mat-card>
+      <app-start-page></app-start-page>
+      </mat-card>
+    </div>
+    <div class="basic-container">
+    <mat-card >
+      <h5>Layouts Component - сохраненные лэйауты</h5>
+      <app-layouts-view-list></app-layouts-view-list>
+    </mat-card>
+    </div>
+<div class="basic-container"></div>
+    <mat-card class="basic-container">
+      <h5>BS STEPPER Component</h5>
+      <app-bs-stepper></app-bs-stepper>
+    </mat-card>
+    <div class="basic-container"></div>
+  </div>
+  <div class="basic-container">
+    <mat-card>
+      <p-tree [value]="files">
+      </p-tree>
+      <h3>Multiple Selection with Checkbox</h3>
+      <p-tree
+       #expandingTree
+       [value]="filesTree"
+       selectionMode="checkbox"
+       [(selection)]="selectedFiles"
+        [contextMenu]="cm"
+        ></p-tree>
+
+      <div style="margin-top: 8px">
+        <button mat-raised-button pButton type="button" label="Expand all" (click)="expandAll()">Развернуть все</button>
+        <button mat-raised-button pButton type="button" label="Collapse all" (click)="collapseAll()">Свернуть все</button>
+      </div>
+
+    </mat-card>
+  </div>
+  <p-contextMenu [global]="true" #cm [model]="items"></p-contextMenu>
